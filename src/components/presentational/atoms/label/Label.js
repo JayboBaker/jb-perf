@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Form = ({children}) =>
-  <form>
+const Label = ({children}) =>
+  <label>
     {children}
-  </form>
+  </label>
 
-Form.propTypes = {
+Label.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object
   ]).isRequired
 }
-export default Form
+export default Label

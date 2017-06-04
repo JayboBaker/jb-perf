@@ -5,8 +5,8 @@ import {expect} from 'chai'
 import Component from './SearchBar'
 
 import Form from '../../atoms/form/Form'
-import Input from '../../atoms/input/Input'
 import Button from '../../atoms/button/Button'
+import LabelledInput from '../labelled-input/LabelledInput'
 
 describe('<SearchBar />', () => {
   const wrapper = shallow(<Component />)
@@ -19,7 +19,7 @@ describe('<SearchBar />', () => {
   it('contains a <Button /> component', function () {
     expect(wrapper.find(Button)).to.have.length(1)
   })
-  it('contains an <Input /> component', function () {
-    expect(wrapper.find(Input)).to.have.length(1)
+  it('contains an <LabelledInput /> component', function () {
+    expect(wrapper.find(LabelledInput)).to.have.length(1)
   })
 })

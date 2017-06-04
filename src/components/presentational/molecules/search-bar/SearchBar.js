@@ -1,14 +1,14 @@
 import React from 'react'
 
 import Form from '../../atoms/form/Form'
-import Input from '../../atoms/input/Input'
 import Button from '../../atoms/button/Button'
+import LabelledInput from '../labelled-input/LabelledInput'
 
 const SearchBar = () =>
   <div>
     <Form>
-      <Input />
-      <Button />
+      <LabelledInput />
+      <Button text='Search' />
     </Form>
   </div>
 
