@@ -1,0 +1,88 @@
+{
+  "name": "jb-perf",
+  "version": "1.0.0",
+  "description": "A movie search facility",
+  "main": "index.js",
+  "author": "James Baker",
+  "license": "ISC",
+  "engineStrict": true,
+  "engines": {
+    "node": "^6.9.1",
+    "npm": "^3.10.08"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "beforeEach",
+      "it",
+      "expect"
+    ],
+    "ignore": [
+      "/dist/"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 4 versions",
+    "not ie < 9"
+  ],
+  "pre-commit": {
+    "run": [
+      "precommit-msg",
+      "test"
+    ]
+  },
+  "scripts": {
+    "build": "npm run build:all",
+    "build:all": "npm run build:clean && npm run build:app",
+    "build:clean": "rm -rf dist && mkdir dist",
+    "build:app": "cross-env NODE_ENV=production webpack --display-error-details",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --progress",
+    "lint": "standard",
+    "lint:watch": "nodemon --watch ./src/ --exec npm run lint",
+    "lint:fix": "standard --fix",
+    "precommit-msg": "echo 'Running pre-commit checks...' && exit 0",
+    "shrinkwrap:fix": "rm -rf node_modules && rm -f npm-shrinkwrap.json && npm i && npm shrinkwrap",
+    "test": "concurrently 'npm run lint' 'npm run spec'",
+    "test:watch": "concurrently 'npm run lint:watch' 'npm run spec:watch'",
+    "spec": "mocha --compilers js:babel-core/register test/browser.js 'src/**/*.spec.js'",
+    "spec:watch": "mocha --compilers js:babel-core/register -w test/browser.js 'src/**/*.spec.js'"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-react": "^6.24.1",
+    "chai": "^4.0.1",
+    "compression-webpack-plugin": "^0.4.0",
+    "concurrently": "^3.4.0",
+    "cross-env": "^5.0.0",
+    "css-loader": "^0.28.4",
+    "cssnano": "^4.0.0-rc.0",
+    "enzyme": "^2.8.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.28.0",
+    "jsdom": "^11.0.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^3.4.2",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "postcss-cli": "^4.0.0",
+    "postcss-loader": "^2.0.5",
+    "pre-commit": "^1.2.2",
+    "prop-types": "^15.5.10",
+    "react-a11y": "^0.3.3",
+    "react-addons-test-utils": "^15.5.1",
+    "react-test-renderer": "^15.5.4",
+    "sass-loader": "^6.0.5",
+    "standard": "^10.0.2",
+    "sw-precache": "^5.1.1",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
