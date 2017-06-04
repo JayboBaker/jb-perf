@@ -3,10 +3,15 @@ import { shallow } from 'enzyme'
 import {expect} from 'chai'
 
 import Component from './App'
+import SearchBar from '../../presentational/molecules/search-bar/SearchBar'
 
 describe('<App />', () => {
+  const wrapper = shallow(<Component />)
   it('contains an <div/> element', function () {
-    const wrapper = shallow(<Component />)
     expect(wrapper.find('div')).to.have.length(1)
+  })
+
+  it('contains an <SearchBar /> component', function () {
+    expect(wrapper.find(SearchBar)).to.have.length(1)
   })
 })

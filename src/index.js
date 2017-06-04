@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import a11y from 'react-a11y'
 
-import App from './components/app/App'
+import App from './components/container/app/App'
 
 import './index.scss'
 
