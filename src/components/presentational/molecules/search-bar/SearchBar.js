@@ -4,11 +4,11 @@ import Form from '../../atoms/form/Form'
 import Button from '../../atoms/button/Button'
 import LabelledInput from '../labelled-input/LabelledInput'
 
-const SearchBar = () =>
+const SearchBar = ({labelText}) =>
   <div>
     <Form>
-      <LabelledInput />
-      <Button text='Search' />
+      <LabelledInput name='search' {...{labelText}} />
+      <Button text='Search' type='submit' />
     </Form>
   </div>
 

@@ -9,7 +9,11 @@ import Button from '../../atoms/button/Button'
 import LabelledInput from '../labelled-input/LabelledInput'
 
 describe('<SearchBar />', () => {
-  const wrapper = shallow(<Component />)
+  const initialProps = {
+    labelText: 'Test Label Text'
+  }
+  const wrapper = shallow(<Component {...initialProps} />)
+
   it('contains a <div /> element', function () {
     expect(wrapper.find('div')).to.have.length(1)
   })
