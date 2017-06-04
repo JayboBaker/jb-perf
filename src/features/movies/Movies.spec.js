@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import {expect} from 'chai'
+import { expect } from 'chai'
 
-import Component from './App'
-import SearchBar from '../../presentational/molecules/search-bar/SearchBar'
+import Component from './Movies'
+import SearchBar from '../../components/presentational/molecules/search-bar/SearchBar'
 
-describe('<App />', () => {
+describe('<Movies />', () => {
   const wrapper = shallow(<Component />)
   it('contains an <div/> element', function () {
     expect(wrapper.find('div')).to.have.length(1)
