@@ -22,7 +22,7 @@ const config = {
     extensions: ['.scss', '.js', '.json']
   },
 
-  devtool: isDev ? 'cheap-module-eval-source-map' : 'cheap-source-map',
+  devtool: isDev ? 'cheap-source-map' : 'cheap-source-map',
 
   devServer: {
     contentBase: path.join(__dirname, '/src'),
