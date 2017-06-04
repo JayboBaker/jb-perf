@@ -15,7 +15,8 @@
       "describe",
       "beforeEach",
       "it",
-      "expect"
+      "expect",
+      "before"
     ],
     "ignore": [
       "/dist/"
@@ -76,6 +77,8 @@
     "react-addons-test-utils": "^15.5.1",
     "react-test-renderer": "^15.5.4",
     "sass-loader": "^6.0.5",
+    "sinon": "2.3.2",
+    "sinon-chai": "2.10.0",
     "standard": "^10.0.2",
     "sw-precache": "^5.1.1",
     "webpack": "^2.6.1",
@@ -83,6 +86,7 @@
   },
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "superagent": "3.5.2"
   }
 }
