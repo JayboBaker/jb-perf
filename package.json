@@ -47,7 +47,8 @@
     "test": "concurrently 'npm run lint' 'npm run spec'",
     "test:watch": "concurrently 'npm run lint:watch' 'npm run spec:watch'",
     "spec": "mocha --compilers js:babel-core/register test/browser.js 'src/**/*.spec.js'",
-    "spec:watch": "mocha --compilers js:babel-core/register -w test/browser.js 'src/**/*.spec.js'"
+    "spec:watch": "mocha --compilers js:babel-core/register -w test/browser.js 'src/**/*.spec.js'",
+    "deploy": "npm run test && npm run build && aws s3 sync dist/ s3://james-baker-me-uk/perf"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
